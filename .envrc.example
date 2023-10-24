@@ -1,0 +1,4 @@
+export GITHUB_TOKEN=
+export SERVER_ENDPOINT=https://spacex-production.up.railway.app
+# development | production | preview
+export STAGE=development

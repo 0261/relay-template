@@ -1,0 +1,73 @@
+{
+  "name": "relay-template",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "codegen": "graphql-codegen",
+    "dev": "yarn codegen && yarn vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20231016.0",
+    "@graphql-codegen/cli": "^5.0.0",
+    "@graphql-codegen/client-preset": "^4.1.0",
+    "@graphql-codegen/schema-ast": "^4.0.0",
+    "@types/node": "^20.8.8",
+    "@types/react": "^18.2.31",
+    "@types/react-dom": "^18.2.14",
+    "@types/react-router-dom": "^5.3.3",
+    "@types/relay-compiler": "^14.0.2",
+    "@types/relay-runtime": "^14.1.15",
+    "@typescript-eslint/eslint-plugin": "^6.7.3",
+    "@typescript-eslint/parser": "^6.7.3",
+    "@vanilla-extract/css": "^1.13.0",
+    "@vanilla-extract/recipes": "^0.5.0",
+    "@vanilla-extract/sprinkles": "^1.6.1",
+    "@vanilla-extract/vite-plugin": "^3.9.0",
+    "@vitejs/plugin-react-swc": "^3.4.0",
+    "babel-plugin-relay": "^16.0.0",
+    "eslint": "^8.50.0",
+    "eslint-plugin-perfectionist": "^2.1.0",
+    "graphql": "^16.8.1",
+    "prettier": "^3.0.3",
+    "relay-compiler": "^16.0.0",
+    "relay-runtime": "^16.0.0",
+    "terser": "^5.22.0",
+    "typescript": "^5.2.2",
+    "vite": "^4.5.0",
+    "vite-plugin-checker": "^0.6.2",
+    "vite-plugin-relay-lite": "^0.5.0",
+    "wrangler": "^3.14.0"
+  },
+  "dependencies": {
+    "@seed-design/design-token": "^1.0.3",
+    "@seed-design/icon": "^0.3.10",
+    "@seed-design/stylesheet": "^1.0.3",
+    "normalize.css": "^8.0.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "zod": "^3.22.4"
+  },
+  "relay": {
+    "src": "./src",
+    "schema": "./src/graphql/__generated__/schema.graphql",
+    "customScalars": {
+      "DateTime": "string"
+    },
+    "exclude": [
+      "**/node_modules/**",
+      "**/__mocks__/**",
+      "**/__relay__/**",
+      "**/__generated__/**"
+    ],
+    "language": "typescript",
+    "eagerEsModules": true,
+    "artifactDirectory": "src/graphql/__relay__",
+    "featureFlags": {
+      "enable_relay_resolver_transform": true
+    }
+  },
+  "packageManager": "yarn@4.0.0"
+}

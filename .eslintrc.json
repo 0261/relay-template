@@ -1,0 +1,66 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": "tsconfig.json",
+    "ecmaVersion": "latest"
+  },
+  "plugins": ["perfectionist"],
+  "rules": {
+    "perfectionist/sort-interfaces": "error",
+    "semi-spacing": "error",
+    "quotes": ["error", "single"],
+    "space-in-parens": "error",
+    "no-unreachable": "error",
+    "camelcase": "error",
+    "curly": "error",
+    "no-extra-semi": "error",
+    "no-console": "warn",
+    "comma-spacing":"error",
+    "key-spacing": [
+      "error",
+      {
+        "multiLine": {
+          "beforeColon": false,
+          "afterColon": true
+        },
+        "align": {
+            "beforeColon": false,
+            "afterColon": true,
+            "on": "colon"
+        }
+      }
+    ],
+    "no-duplicate-imports": "error",
+    "no-dupe-args": "error",
+    "no-eq-null": "error",
+    "prefer-const": "error",
+    "prefer-numeric-literals": "error",
+    "no-inline-comments": "error",
+    "max-params": ["error", 3],
+    "max-classes-per-file": ["error", 1],
+    "max-lines": ["error", {"max": 150, "skipBlankLines": true, "skipComments": true}],
+    "complexity": ["error", 3],
+    "eqeqeq": "error",
+    "func-style": ["error", "declaration", { "allowArrowFunctions": false }],
+    "@typescript-eslint/semi": "error",
+    "space-before-blocks": "error",
+    "block-spacing": "error",
+    "arrow-spacing": "error",
+    "no-inner-declarations": "error",
+    "array-bracket-spacing": "error",
+    "array-element-newline": ["error", "consistent"],
+    "indent": [
+      "error",
+      2,
+      {
+        "SwitchCase": 1
+      }
+    ]
+  },
+  "ignorePatterns": ["scripts/", "node_modules/", "src/graphql/**/*.ts", "vite.config.ts", "functopns/**/*.ts"],
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking"
+  ]
+}
